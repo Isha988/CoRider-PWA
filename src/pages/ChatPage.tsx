@@ -1,6 +1,7 @@
 import { FC } from "react";
 import Header from "../component/Header/Header";
 import Chats from "../component/Chat/Chats";
+import Footer from "../component/Footer/Footer"
 
 const ChatPage: FC = () => {
   const header = { name: "Trip 1", from: "IGI Airport, T3", to: "Sector 28" };
@@ -141,6 +142,7 @@ const ChatPage: FC = () => {
     <div>
       <Header header={header} />
       <Chats chats={chats} />
+      <Footer/>
     </div>
   );
 };
