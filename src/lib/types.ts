@@ -1,19 +1,19 @@
 export type HeaderType = {
-  name: String;
-  from: String;
-  to: String;
+  name: string;
+  from: string;
+  to: string;
 };
 
 export type SenderType = {
-  user_id: String;
-  image: URL;
-  is_kyc_type: boolean;
+  user_id: string;
+  image: string;
+  is_kyc_verified: boolean;
   self: boolean;
 };
 
 export type ChatType = {
-  id: String;
-  message: String;
+  id: string;
+  message: string;
   sender: SenderType;
-  time: Date;
+  time: string;
 };
