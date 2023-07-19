@@ -31,23 +31,31 @@ const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
 
   // fetch chats
   const getChat = async () => {
-    setResponse(initialResponse);
-    const res = await fetch("https://qa.corider.in/assignment/chat?page=0");
-    const json = await res.json();
-    setHeader({ name: json.name, from: json.from, to: json.to });
-    setChats(json.chats);
-    setResponse({ status: json.status, message: json.message });
+    try {
+      setResponse(initialResponse);
+      const res = await fetch("https://qa.corider.in/assignment/chat?page=0");
+      const json = await res.json();
+      setHeader({ name: json.name, from: json.from, to: json.to });
+      setChats(json.chats);
+      setResponse({ status: json.status, message: json.message });
+    } catch (error) {
+      setResponse({ status: "error", message: "some error occur" });
+    }
   };
 
   // load more/old chats
   const getMoreChats = async (page: number) => {
-    setResponse(initialResponse);
-    const res = await fetch(
-      `https://qa.corider.in/assignment/chat?page=${page}`,
-    );
-    const json = await res.json();
-    setChats((prev) => [...json.chats, ...prev]);
-    setResponse({ status: json.status, message: json.message });
+    try {
+      setResponse(initialResponse);
+      const res = await fetch(
+        `https://qa.corider.in/assignment/chat?page=${page}`,
+      );
+      const json = await res.json();
+      setChats((prev) => [...json.chats, ...prev]);
+      setResponse({ status: json.status, message: json.message });
+    } catch (error) {
+      setResponse({ status: "error", message: "some error occur" });
+    }
   };
 
   return (
