@@ -17,3 +17,15 @@ export type ChatType = {
   sender: SenderType;
   time: string;
 };
+
+export type ResponseType = {
+  message: string;
+  status: string;
+};
+
+export interface ChatContextInterface extends HeaderType, ResponseType {
+  chats: ChatType[];
+  addChat: (chat: ChatType) => void;
+  getChat: () => void;
+  getMoreChats: (page: number) => void;
+}

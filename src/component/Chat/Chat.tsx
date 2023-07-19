@@ -9,7 +9,7 @@ interface ChatProps {
 
 const Chat: FC<ChatProps> = ({ chat }) => {
   return (
-    <Flex>
+    <Flex maxW={500} marginLeft={chat.sender.self ? "auto" : 0}>
       {!chat.sender.self && (
         <Box>
           <Avatar src={chat.sender.image} />
@@ -18,6 +18,7 @@ const Chat: FC<ChatProps> = ({ chat }) => {
       )}
       <Box>
         <Text>{chat.message}</Text>
+        <Text>{chat.time}</Text>
       </Box>
     </Flex>
   );
