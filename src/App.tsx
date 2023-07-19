@@ -1,4 +1,4 @@
-import { ChakraProvider, extendTheme, IconButton } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import ChatPage from "./pages/ChatPage";
 import ChatProvider from "./lib/context/ChatContext";
 
