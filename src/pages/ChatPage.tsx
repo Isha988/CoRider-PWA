@@ -22,7 +22,7 @@ const ChatPage: FC = () => {
         getMoreChats={chat?.getMoreChats}
         response={{ status: chat?.status, message: chat?.message }}
       />
-      <Footer />
+      <Footer addChat={chat?.addChat} />
     </Flex>
   );
 };

@@ -25,7 +25,9 @@ const ChatProvider: FC<ChatProviderProps> = ({ children }) => {
   // function for chats
 
   // add chat
-  const addChat = (chat: ChatType) => {};
+  const addChat = (chat: ChatType) => {
+    setChats((prev) => [...prev, chat]);
+  };
 
   // fetch chats
   const getChat = async () => {
