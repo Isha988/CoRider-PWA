@@ -24,10 +24,12 @@ const theme = extendTheme({
           bg: "blue.500",
           color: "white",
           marginLeft: "auto",
+          borderBottomRightRadius: "none !important",
         },
         otherMessage: {
           bg: "white",
           marginRight: "auto",
+          borderTopLeftRadius: "none !important",
         },
       },
     },

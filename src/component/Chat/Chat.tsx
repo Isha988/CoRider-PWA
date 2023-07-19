@@ -40,7 +40,7 @@ const Chat: FC<ChatProps> = ({ chat }) => {
                 key={index}
                 padding="3"
                 marginBottom="1"
-                borderRadius="xl"
+                borderRadius="2xl"
                 boxShadow="lg"
                 width="fit-content"
                 variant={chat.sender.self ? "selfMessage" : "otherMessage"}
