@@ -17,8 +17,14 @@ const Chat: FC<ChatProps> = ({ chat }) => {
         </Box>
       )}
       <Box>
-        <Text>{chat.message}</Text>
-        <Text>{chat.time}</Text>
+        {chat.message.split("<br>").map(
+          (mess, index) =>
+            mess && (
+              <Text border="1px" marginBottom="1px" key={index}>
+                {mess}
+              </Text>
+            ),
+        )}
       </Box>
     </Flex>
   );
