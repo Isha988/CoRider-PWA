@@ -37,7 +37,7 @@ const Chats: FC<ChatsProps> = ({ chats, response, getMoreChats }) => {
   }, [chats]);
 
   return (
-    <Box flex="1" overflowY="auto" ref={chatsRef}>
+    <Box flex="1" overflowY="scroll" ref={chatsRef} className="hideScroll">
       {chats?.map((chat) => (
         <Fragment key={chat.id}>
           <Chat chat={chat} />

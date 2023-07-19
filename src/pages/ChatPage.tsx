@@ -15,7 +15,14 @@ const ChatPage: FC = () => {
   }, []);
 
   return (
-    <Flex height="100vh" direction="column">
+    <Flex
+      height="100vh"
+      direction="column"
+      width={{ md: "700px", lg: "900px" }}
+      paddingX="3"
+      marginX="auto"
+      shadow="xs"
+    >
       <Header header={{ name: chat?.name, from: chat?.from, to: chat?.to }} />
       <Chats
         chats={chat?.chats}

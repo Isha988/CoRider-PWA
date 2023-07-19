@@ -10,33 +10,56 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({ header }) => {
   return (
     <header>
-      {/* name and  edit options*/}
-      <Flex align="center" justify="space-between">
-        <Heading as="h1" size="md">
-          {header.name}
-        </Heading>
-        <IconButton
-          aria-label="Header Edit"
-          icon={<FiEdit />}
-          bg="transparent"
-        />
-      </Flex>
-      {/* destination  and  more options*/}
-      <Flex align="center" justify="space-between">
-        {/* avatar */}
-        <Avatar name="Kent Dodds" src="https://bit.ly/kent-c-dodds" />
-        {/* destination */}
-        <Box flex={1}>
-          <Text>{header.from}</Text>
-          <Text>{header.to}</Text>
-        </Box>
-        {/* more options */}
-        <IconButton
-          aria-label="Header Options"
-          icon={<FiMoreVertical />}
-          bg="transparent"
-        />
-      </Flex>
+      <Box borderBottom="1px" borderBottomColor="gray.200" paddingY="3">
+        {/* name and  edit options*/}
+        <Flex
+          align="center"
+          justify="space-between"
+          marginBottom="2"
+          fontWeight="normal"
+        >
+          <Heading as="h1" size="lg">
+            {header.name}
+          </Heading>
+          <IconButton
+            aria-label="Header Edit"
+            icon={<FiEdit />}
+            bg="transparent"
+          />
+        </Flex>
+        {/* destination  and  more options*/}
+        <Flex align="center" justify="space-between" gap="3">
+          {/* avatar */}
+          <Avatar
+            name="Kent Dodds"
+            src="https://bit.ly/kent-c-dodds"
+            size="md"
+          />
+          {/* destination */}
+          <Box flex={1}>
+            {/* from */}
+            <Flex gap="2" alignItems="center">
+              <Text fontWeight="500" color="gray.600">
+                From
+              </Text>
+              <Text fontWeight="600">{header.from}</Text>
+            </Flex>
+            {/* to */}
+            <Flex gap="2" alignItems="center">
+              <Text fontWeight="500" color="gray.600">
+                To
+              </Text>
+              <Text fontWeight="600">{header.to}</Text>
+            </Flex>
+          </Box>
+          {/* more options */}
+          <IconButton
+            aria-label="Header Options"
+            icon={<FiMoreVertical />}
+            bg="transparent"
+          />
+        </Flex>
+      </Box>
     </header>
   );
 };
