@@ -31,8 +31,8 @@ const Header: FC<HeaderProps> = ({ header }) => {
         <Flex align="center" justify="space-between" gap="3">
           {/* avatar */}
           <Avatar
-            name="Kent Dodds"
-            src="https://bit.ly/kent-c-dodds"
+            name="Trip No."
+            src="https://img.traveltriangle.com/blog/wp-content/uploads/2017/05/horsley-hills-in-Andhra-SS220520171.jpg"
             size="md"
           />
           {/* destination */}
